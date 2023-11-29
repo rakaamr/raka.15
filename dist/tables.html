@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Tables - SB Admin</title>
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    </head>
+    <body class="sb-nav-fixed">
+        <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="index.html">Start Bootstrap</a>
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            <!-- Navbar Search-->
+            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+            <!-- Navbar-->
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#!">Settings</a></li>
+                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Core</div>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                Dashboard
+                            </a>
+                            <div class="sb-sidenav-menu-heading">Interface</div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Layouts
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="layout-static.html">Static Navigation</a>
+                                    <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Pages
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                        Authentication
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="login.html">Login</a>
+                                            <a class="nav-link" href="register.html">Register</a>
+                                            <a class="nav-link" href="password.html">Forgot Password</a>
+                                        </nav>
+                                    </div>
+                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                                        Error
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="401.html">401 Page</a>
+                                            <a class="nav-link" href="404.html">404 Page</a>
+                                            <a class="nav-link" href="500.html">500 Page</a>
+                                        </nav>
+                                    </div>
+                                </nav>
+                            </div>
+                            <div class="sb-sidenav-menu-heading">Addons</div>
+                            <a class="nav-link" href="charts.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Charts
+                            </a>
+                            <a class="nav-link" href="tables.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Tables
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Logged in as:</div>
+                        Start Bootstrap
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Tables</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Tables</li>
+                        </ol>
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                DataTables is a third party plugin that is used to generate the demo table below. For more information about DataTables, please visit the
+                                <a target="_blank" href="https://datatables.net/">official DataTables documentation</a>
+                                .
+                            </div>
+                        </div>
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                                DataTable Example
+                                <div class="row ">
+                                    <div class="col-md-6 mb-3">
+                                      <div class="card-body">
+                                        <div class="table-responsive">
+                                            <div id="dataTable2_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="dataTable2_length"><label>Show <select name="dataTable2_length" aria-controls="dataTable2" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="dataTable2_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable2"></label></div></div></div><div class="row"><div class="col-sm-12"><table class="table table-sm table-bordered tables-striped dataTable" id="dataTable2" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable2_info" style="width: 100%;">
+                                            <thead class="thead-dark">
+                                                <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="dataTable2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 54.125px;">Name</th><th class="sorting" tabindex="0" aria-controls="dataTable2" rowspan="1" colspan="1" aria-label="Diplomat Mild: activate to sort column ascending" style="width: 69.0469px;">Diplomat Mild</th><th class="sorting" tabindex="0" aria-controls="dataTable2" rowspan="1" colspan="1" aria-label="A Mild: activate to sort column ascending" style="width: 32.5938px;">A Mild</th><th class="sorting" tabindex="0" aria-controls="dataTable2" rowspan="1" colspan="1" aria-label="Class Mild: activate to sort column ascending" style="width: 40.3594px;">Class Mild</th><th class="sorting" tabindex="0" aria-controls="dataTable2" rowspan="1" colspan="1" aria-label="Magnum Mild: activate to sort column ascending" style="width: 64.9688px;">Magnum Mild</th><th class="sorting" tabindex="0" aria-controls="dataTable2" rowspan="1" colspan="1" aria-label="Pro Mild: activate to sort column ascending" style="width: 32.5938px;">Pro Mild</th><th class="sorting" tabindex="0" aria-controls="dataTable2" rowspan="1" colspan="1" aria-label="U Mild: activate to sort column ascending" style="width: 32.5938px;">U Mild</th><th class="sorting" tabindex="0" aria-controls="dataTable2" rowspan="1" colspan="1" aria-label="Others: activate to sort column ascending" style="width: 50.9531px;">Others</th><th class="sorting" tabindex="0" aria-controls="dataTable2" rowspan="1" colspan="1" aria-label="Total: activate to sort column ascending" style="width: 37.8281px;">Total</th><th class="sorting" tabindex="0" aria-controls="dataTable2" rowspan="1" colspan="1" aria-label="%: activate to sort column ascending" style="width: 28.7188px;">%</th></tr>
+                                                </thead>
+                                                <tbody>
+                                                <!-- @foreach($barang as $brg)
+                                                <tr>
+                                                <td>{{ $brg->kd_brg}}</td>
+                                                <td>{{ $brg->nm_brg}}</td>
+                                                <td>{{ number_format($brg->harga)}}</td>
+                                                <td>{{ number_format($brg->stok)}}</td>
+                                               
+                                                </tr>
+                                            @endforeach -->
+                                                  
+                                                
+                                                
+                                                
+                                                
+                                            <tr role="row" class="odd">
+                                                <td class="sorting_1">KANTOR</td>
+                                                  <td>109</td>
+                                                  <td>35</td>
+                                                  <td>109</td>
+                                                  <td>35</td>
+                                                  <td>109</td>
+                                                  <td>35</td>
+                                                  <td>109</td>
+                                                  <td>108%</td>
+                                                  <td>108%</td>
+                                                </tr><tr role="row" class="even"><td class="sorting_1">Mall</td>
+                                                  <td>35</td>
+                                                  <td>109</td>
+                                                  <td>35</td>
+                                                  <td>109</td>
+                                                  <td>35</td>
+                                                  <td>109</td>
+                                                  <td>35</td>
+                                                  <td>109</td>
+                                                  <td>108%</td>
+                                                </tr><tr role="row" class="odd">
+                                                <td class="sorting_1">PA</td>
+                                                  <td>109</td>
+                                                  <td>35</td>
+                                                  <td>109</td>
+                                                  <td>35</td>
+                                                  <td>109</td>
+                                                  <td>35</td>
+                                                  <td>109</td>
+                                                  <td>108%</td>
+                                                  <td>108%</td>
+                                                </tr><tr role="row" class="even">
+                                                <td class="sorting_1">SC</td>
+                                                  <td>109</td>
+                                                  <td>35</td>
+                                                  <td>109</td>
+                                                  <td>35</td>
+                                                  <td>109</td>
+                                                  <td>35</td>
+                                                  <td>109</td>
+                                                  <td>108%</td>
+                                                  <td>108%</td>
+                                                </tr><tr role="row" class="odd">
+                                                  <td class="sorting_1">WARTEG</td>
+                                                  <td>109</td>
+                                                  <td>35</td>
+                                                  <td>109</td>
+                                                  <td>35</td>
+                                                  <td>109</td>
+                                                  <td>35</td>
+                                                  <td>109</td>
+                                                  <td>108%</td>
+                                                  <td>108%</td>
+                                                </tr></tbody>
+                                            <tfoot class="thead-light">
+                                                <tr><th rowspan="1" colspan="1">Total</th><th rowspan="1" colspan="1">600</th><th rowspan="1" colspan="1">600</th><th rowspan="1" colspan="1">600</th><th rowspan="1" colspan="1">679</th><th rowspan="1" colspan="1">679</th><th rowspan="1" colspan="1">679</th><th rowspan="1" colspan="1">109</th><th rowspan="1" colspan="1">109%</th><th rowspan="1" colspan="1">109%</th></tr>
+                                            </tfoot>
+                                            
+                                            </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="dataTable2_info" role="status" aria-live="polite">Showing 1 to 5 of 5 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="dataTable2_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="dataTable2_previous"><a href="#" aria-controls="dataTable2" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="dataTable2" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item next disabled" id="dataTable2_next"><a href="#" aria-controls="dataTable2" data-dt-idx="2" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
+                                        </div>
+                                  </div>
+                                      </div>
+                                      <div class="col-md-6 mb-3">
+                                      <div class="card-body">
+                                        <div class="table-responsive">
+                                            <div id="dataTable_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"><div class="dataTables_length" id="dataTable_length"><label>Show <select name="dataTable_length" aria-controls="dataTable" class="custom-select custom-select-sm form-control form-control-sm"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div></div><div class="col-sm-12 col-md-6"><div id="dataTable_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="dataTable"></label></div></div></div><div class="row"><div class="col-sm-12"><table class="table table-sm table-bordered tables-striped dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                                            <thead class="thead-dark">
+                                                <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Range Usia: activate to sort column descending" style="width: 47.3594px;">Range Usia</th><th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Banyak: activate to sort column ascending" style="width: 54.625px;">Banyak</th><th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="%: activate to sort column ascending" style="width: 28.7188px;">%</th></tr>
+                                                </thead>
+                                                <tbody>
+                                                <!-- @foreach($user as $us)
+                                                <tr>
+                                                <td>{{ $us->id}}</td>
+                                                <td>{{ $us->name}}</td>
+                                                <td>{{ $us->email}}</td>
+                                               
+                                                </tr>
+                                            @endforeach -->
+                                                  
+                                                
+                                                
+                                                
+                                                
+                                            <tr role="row" class="odd">
+                                                  <td class="sorting_1">&gt;50th</td>
+                                                  <td>0</td>
+                                                  <td>0%</td>
+                                                </tr><tr role="row" class="even"><td class="sorting_1">18-25 th</td>
+                                                  <td>217</td>
+                                                  <td>12%</td>
+                                                </tr><tr role="row" class="odd">
+                                                  <td class="sorting_1">26-30th</td>
+                                                  <td>1380</td>
+                                                  <td>76%</td>
+                                                </tr><tr role="row" class="even">
+                                                  <td class="sorting_1">31-40th</td>
+                                                  <td>203</td>
+                                                  <td>11%</td>
+                                                </tr><tr role="row" class="odd">
+                                                  <td class="sorting_1">41-50th</td>
+                                                  <td>14</td>
+                                                  <td>1%</td>
+                                                </tr></tbody>
+                                            <tfoot class="thead-light">
+                                                <tr><th rowspan="1" colspan="1">Total</th><th rowspan="1" colspan="1">1814</th><th rowspan="1" colspan="1">100%</th></tr>
+                                            </tfoot>
+                                            
+                                            </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="dataTable_info" role="status" aria-live="polite">Showing 1 to 5 of 5 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="dataTable_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="dataTable_previous"><a href="#" aria-controls="dataTable" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="dataTable" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item next disabled" id="dataTable_next"><a href="#" aria-controls="dataTable" data-dt-idx="2" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
+                                        </div>
+                                  </div>
+                                    </div>
+                                  
+                                  
+                          
+                          <script>
+                          
+                          
+                          var xValues = ["MALL", "WARTEG", "SC", "KANTOR", "PA"];
+                          var yValues = [55, 49, 44, 24, 15,8];
+                          var barColors = ["red", "green","blue","orange","brown"];
+                          
+                          var aValues = ["18-25th", "26-30th", "31-40th", "41-50th", ">50th"];
+                          var bValues = [217, 1380, 203, 14, 0];
+                          var barColors = [
+                                'rgba(255, 99, 132, 0.5)',
+                                'rgba(255, 159, 64, 0.5)',
+                                'rgba(255, 205, 86, 0.5)',
+                                'rgba(75, 192, 192, 0.5)',
+                                'rgba(54, 162, 235, 0.5)',];
+                          
+                          
+                          new Chart("myChart", {
+                            type: "bar",
+                            data: {
+                              labels: xValues,
+                              datasets: [{
+                                backgroundColor: barColors,
+                                data: yValues
+                              }]
+                            },
+                            options: {
+                              legend: {display: false},
+                              title: {
+                                display: true,
+                                text: "Venue"
+                              }
+                            }
+                          });
+                          
+                          new Chart("myChart2", {
+                            type: "bar",
+                            data: {
+                              labels: aValues,
+                              datasets: [{
+                                backgroundColor: barColors,
+                                data: bValues
+                              }]
+                            },
+                            options: {
+                              legend: {display: false},
+                              title: {
+                                display: true,
+                                text: "Umur"
+                              }
+                            }
+                          });
+                          
+                          new Chart("myChart3", {
+                            type: "bar",
+                            data: {
+                              labels: aValues,
+                              datasets: [{
+                                backgroundColor: barColors,
+                                data: bValues
+                              }]
+                            },
+                            options: {
+                              legend: {display: false},
+                              title: {
+                                display: true,
+                                text: "Umur"
+                              }
+                            }
+                          });
+                          
+                          new Chart("myChart4", {
+                            type: "bar",
+                            data: {
+                              labels: aValues,
+                              datasets: [{
+                                backgroundColor: barColors,
+                                data: bValues
+                              }]
+                            },
+                            options: {
+                              legend: {display: false},
+                              title: {
+                                display: true,
+                                text: "Umur"
+                              }
+                            }
+                          });
+                          </script>
+                         
+                  
+                                  </div>
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Your Website 2023</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>++
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
+        <script src="js/datatables-simple-demo.js"></script>
+    </body>
+</html>
